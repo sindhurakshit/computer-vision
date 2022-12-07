@@ -28,9 +28,10 @@ Downloaded URL https://www.image-net.org/download.php
 
 ### Medical Image Datasets
 <ul>
-  <li><h3> PanNuke, Lizard, GlaS</h3>  visit for download links  https://warwick.ac.uk/fac/cross_fac/tia/data/</li>
-   <li><h3></h3></li>
-   <li><h3></h3></li>
-   <li><h3></h3></li>
+    <li><h3> Lizard Dataset </h3> Download URL https://warwick.ac.uk/fac/cross_fac/tia/data/lizard</li>
+   <li><h3>PanNuke Dataset</h3>Dataset for Nuclei Instance Segmentation and Classification , Download URL https://warwick.ac.uk/fac/cross_fac/tia/data/pannuke</li>
+   <li><h3>GlaS</h3> Gland segmentation in histology images , Download URL https://warwick.ac.uk/fac/cross_fac/tia/data/glascontest/download/</li>
+  <li><h3> Other Datasets </h3>  visit for download links  https://warwick.ac.uk/fac/cross_fac/tia/data/</li>
+
  </ul>
   
