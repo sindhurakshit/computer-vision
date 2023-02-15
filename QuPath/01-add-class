@@ -1,0 +1,42 @@
+/* 
+Author : Kumar Sindhurakshit
+Date : 25-May-2022 
+Version : 1.0 
+Description :  This code segment changes image type to flurosent and creates classes required for image analysis 
+Set values of color channels/classes 
+*/
+
+import static qupath.lib.gui.scripting.QPEx.*
+import qupath.lib.objects.classes.PathClass
+import qupath.lib.objects.classes.PathClassFactory
+import groovy.util.*
+import qupath.lib.scripting.QP
+import qupath.lib.roi.*
+import qupath.lib.common.ColorTools
+
+setImageType('FLUORESCENCE')
+guiscript=true
+def pathClasses = getQuPath().getAvailablePathClasses()
+listOfClasses = [
+getPathClass("DAPI (C1)",ColorTools.makeRGB(0,0,255)),
+getPathClass("FITC CD (20)",ColorTools.makeRGB(0,255,0)),
+getPathClass("IRITC CD (C3)",ColorTools.makeRGB(255,0,0)),
+]
+
+// Wrap in plateform runner to avoid FX erros.
+Platform.runLater {
+//add channels
+pathClasses.clear()
+pathClasses.setAll(listOfClasses)
+getQuPath().repaintViewers()
+
+}
+
+
+// Set the range for the first two channels
+def viewer = getCurrentViewer()
+setChannelDisplayRange(0,10,255) 
+setChannelDisplayRange(1,1,44) 
+setChannelDisplayRange(2,1,57)
+// Ensure the updates are visible
+viewer.repaintEntireImage()
